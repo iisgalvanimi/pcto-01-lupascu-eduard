@@ -4,8 +4,9 @@ const app = new express();
 
 //Importo la classe per le chiamate al DB
 const sqlUtils = require('./SqlUtils.js');
+const cors = require("cors");
 
-
+app.use(new cors());
 //passo il foglio come parametro nell’url
 // esempio http://localhost:3000/ci_vettore/120
 app.get('/ci_vettore/:foglio', function (req, res) {
